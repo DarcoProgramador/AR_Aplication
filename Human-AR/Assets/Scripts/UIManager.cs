@@ -13,8 +13,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         GameManager.instance.OnMainMenu += ActivateMainMenu;
-        GameManager.instance.OnMainMenu += ActivateItemsMenu;
-        GameManager.instance.OnMainMenu += ActivateARPosition;
+        GameManager.instance.OnItemsMenu += ActivateItemsMenu;
+        GameManager.instance.OnARPosition += ActivateARPosition;
     }
 
     private void ActivateMainMenu()
@@ -27,7 +27,6 @@ public class UIManager : MonoBehaviour
         itemsMenuCanvas.transform.GetChild(1).transform.DOMoveY(180,0.3f);
 
         ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
     }
 
     private void ActivateItemsMenu()
@@ -50,6 +49,5 @@ public class UIManager : MonoBehaviour
         itemsMenuCanvas.transform.GetChild(1).transform.DOMoveY(180, 0.3f);
 
         ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-        ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
     }
 }
